@@ -9,25 +9,36 @@
     <title>Royal Blue Solutions | Top rated mortgage lenders</title>
 </head>
 <body>
-    <header class="header" id="top">
+    <header class="header" id="header">
         <div class="header-text-container">
             <div class="header-text">
                 <h1>We put people into homes!</h1>
                 <p>Going forward together</p>
-                <a class="chevron-down"><i class="fa fa-chevron-down fa-3x"></i></a>
+                <a class="chevron-down"><i class="fa fa-chevron-down fa-3x menu-item-js" data-link="apply-header"></i></a>
             </div>
         </div>
     </header>
     <div class="menu-section">
         <navbar class="navbar">
-            <img class="logo-navbar" src="/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" onclick="scrollToSection('home')">
+            <img class="logo-navbar menu-item-js" src="/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" data-link="home">
             <nav class="nav">
                 <ul class="menu-list">
-                    <li class="menu-item active">About</li>
-                    <li class="menu-item">Services</li>
-                    <li class="menu-item">Apply Now</li>
-                    <li class="menu-item">Contact</li>
+                    <li class="menu-item menu-item-js" data-link="about">About</li>
+                    <li class="menu-item menu-item-js" data-link="services">Services</li>
+                    <li class="menu-item menu-item-js" data-link="apply-now" id="apply-link">Apply Now</li>
+                    <li class="menu-item menu-item-js" data-link="contact">Contact</li>
                 </ul>
+                    <div class="bars">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="slide-menu">
+                        <ul class="menu-list-slide">
+                            <li class="menu-item menu-item-js" data-link="about">About</li>
+                            <li class="menu-item menu-item-js" data-link="services">Services</li>
+                            <li class="menu-item menu-item-js" data-link="apply-now" id="apply-link">Apply Now</li>
+                            <li class="menu-item menu-item-js" data-link="contact">Contact</li>
+                        </ul>
+                    </div>
             </nav>
         </navbar>
     </div>
@@ -51,7 +62,7 @@
             </div>
         </div>
     </section>
-    <section class="about" id="About">
+    <section class="about" id="about">
         <div class="container">
             <h1 class="section-title">Learn More About Us</h1>
             <div class="section-row">
@@ -81,7 +92,7 @@
             </div>
         </div>
     </section>
-    <section class="apply-now" id="Apply Now">
+    <section class="apply-now" id="apply-now">
         <div class="container">
             <h1 class="section-title">Apply Now</h1>
             <div class="apply-quick">
@@ -117,7 +128,7 @@
             </div>
         </div>
     </section>
-    <section class="footer" id="Contact">
+    <section class="footer" id="contact">
             <div class="footer-newsletter">
                 <div class="container newsletter-flex">
                     <div class="newsletter-text">
@@ -131,8 +142,9 @@
                     </div>
                     <div class="newsletter-form">
                         <form class="newsletter-submit">
-                            <input class="submit-input" type="text" placeholder="Enter your email...">
-                            <button type="submit" class="btn submit-button">SUBMIT</button>
+                            <input class="submit-input email-newsletter" type="text" placeholder="Enter your email...">                            
+                            <button type="submit" class="btn submit-button newsletter-btn">SUBMIT</button>
+                            <span class="error-message hidden">You have entered an invalid email address!</span>                            
                         </form>
                     </div>
                 </div>
@@ -180,4 +192,5 @@
     <a href="#top" class="up-button"><i class="fa fa-chevron-up fa-3x"></i></a>
 </body>
 <script src="JS/script.js"></script>
+<script src="JS/validation.js"></script>
 </html>
