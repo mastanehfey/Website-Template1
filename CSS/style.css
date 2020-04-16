@@ -158,15 +158,23 @@ a{
     display: none;
 }
 .slide-menu{
-    background: yellow;
     position: absolute;
     right: 0;
     top: 63px;
     width: 100%;
-    display: none;
+    overflow: hidden;
 }
 .menu-list-slide{
     list-style: none;
+    background: #9c8441f5;
+    height: 0;
+    transition: ease-in .4s;
+}
+.menu-list-slide li{
+    color:white;
+    font-weight: 400;
+    padding: .5em 2.3em;
+    border-bottom: 1px solid #ffffff2d;
 }
 /* section general--------------------------------------------------------------------------------- */
 .section-title{
@@ -498,7 +506,7 @@ border-top: 1px solid rgba(180, 180, 180,.3);
 .bars{
     display: block;
 }
-.slide-menu{
-    display: none;
+.menu-item:hover{
+    color: var(--mainBlue);
 }
 }
