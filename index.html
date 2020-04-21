@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="shortcut icon" href="./Images/RBS-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./static/Images/RBS-icon.png" type="image/x-icon">
     <script src="https://use.fontawesome.com/635021c34d.js"></script>
     <title>Royal Blue Solutions | Top rated mortgage lenders</title>
 </head>
@@ -20,7 +20,7 @@
     </header>
     <div class="menu-section">
         <navbar class="navbar">
-            <img class="logo-navbar menu-item-js" src="/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" data-link="home">
+            <img class="logo-navbar menu-item-js" src="/static/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" data-link="home">
             <nav class="nav">
                 <ul class="menu-list">
                     <li class="menu-item menu-item-js" data-link="about">About</li>
@@ -57,7 +57,7 @@
                     </p>
                 </div>
                 <div class="right home-image">
-                        <img class="" src="./Images/RBS-Mortgage broker.jpg" alt="">
+                        <img class="" src="./static/Images/RBS-Mortgage broker.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -141,10 +141,13 @@
                         </div>
                     </div>
                     <div class="newsletter-form">
-                        <form class="newsletter-submit">
-                            <input class="submit-input email-newsletter" type="text" placeholder="Enter your email...">                            
-                            <button type="submit" class="btn submit-button newsletter-btn">SUBMIT</button>
-                            <span class="error-message hidden">You have entered an invalid email address!</span>                            
+                        <!-- set data-type for each fields need to check the data format -->
+                        <form class="newsletter-submit" name="newsletter-form" method="POST" id="newsletter-form" novalidate>
+                            <div class="w100">
+                                <input class="submit-input email-newsletter" type="email" name="email"  data-type="email" placeholder="Enter your email..." required> 
+                                <span class="errorBox hidden"></span>
+                            </div>
+                            <button type="submit" class="btn submit-newsletter newsletter-btn submit-btn">SUBMIT</button>
                         </form>
                     </div>
                 </div>
@@ -157,14 +160,25 @@
                         <p>
                             You may contact us by filling in this form any time you need professional support or have any questions.
                         </p>
-                        <form action="" class="contact-form-container">
+                        <form action="forms.php" method="POST" class="contact-form-container" novalidate>
                             <div class="row">
-                                <input type="text" placeholder="Your Name" class="col-6">
-                                <input type="text" placeholder="Your Email" class="col-6">
+                                <div class="col-6">
+                                    <input id="name" type="text" placeholder="Your Name" name="name" required>
+                                <span class="errorBox hidden"></span>
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" placeholder="Your Email" name="email" data-type="email" required>
+                                    <span class="errorBox hidden"></span>
+                                </div>
                             </div>
-                            <input type="text" placeholder="Subject" class="col-12">
-                            <textarea name="message" id="" cols="30" rows="5" class="col-12" placeholder="Message"></textarea>
-                            <button class="btn submit-form-btn">Send Message</button>
+                            <input type="text" placeholder="Subject" class="col-12" name="subject">
+                            <span class="errorBox hidden"></span>
+                            <div>
+                                <textarea type="text" id="message" name="message" id="" cols="30" rows="5" class="col-12" placeholder="Message" required></textarea>
+                                <span class="errorBox hidden"></span>
+                            </div>
+                            <button type="submit" class="btn submit-form-btn submit-btn">Send Message</button>
+                            <p class="success-message"></p>
                         </form>
                     </div>
                     <div class="contact-footer">
@@ -191,6 +205,7 @@
     </section>
     <a href="#top" class="up-button"><i class="fa fa-chevron-up fa-3x"></i></a>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <script src="JS/script.js"></script>
 <script src="JS/validation.js"></script>
 </html>
