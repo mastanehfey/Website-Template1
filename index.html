@@ -7,7 +7,14 @@
     <meta name="keywords" content="">
 
     <link rel="stylesheet" href="CSS/style.css" data-cssvars="src">
-    <link rel="shortcut icon" href="./static/Images/RBS-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./static/Images/RBS-icon.png" type="image/x-icon"> 
+     <!--Alert IE users which browser dosent support!  -->
+    <script>
+    if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+      alert("Your browser dose'nt support all functionalities of the website!"); 
+    }
+    </script>      
     <script src="https://use.fontawesome.com/635021c34d.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <!-- to support older browsers -->

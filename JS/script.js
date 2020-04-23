@@ -1,11 +1,10 @@
-"use strict";
+"use strict";    
 var upBtn = document.querySelector('.up-button');
 var menuSection = document.querySelector('.menu-section');
 var headerHeight = document.getElementById('header').offsetHeight;
 var slideMenuOpen = false;
 
-window.addEventListener('scroll', (e)=> {
-    
+window.addEventListener('scroll', (e)=> {    
     moveUpBtn(e);
     menuSticky(e);    
     if (slideMenuOpen){
@@ -34,20 +33,17 @@ function menuSticky(e){
         document.getElementById('home').style.paddingTop = 0;
     }
 }
-
 //show menu on small screen size----------------------------------------------------------
+
 var bars = document.querySelector('.bars');
 var slideMenu = document.querySelector('.menu-list-slide');
 bars.addEventListener('click', openMobileMenu);
 
-function openMobileMenu(){
-    
+function openMobileMenu(){    
     if (slideMenuOpen) {
-        closeMobileMenu();
-    }
+        closeMobileMenu();    }
     else{
-        //this needs to change if more items added to the slide menu
-        
+        //this needs to change if more items added to the slide menu        
         slideMenu.style.transition = 'ease-in .4s';
         slideMenu.style.height = '150px';
         slideMenuOpen = true;  
@@ -62,9 +58,7 @@ function closeMobileMenu(){
 var menuItems = document.querySelectorAll('.menu-item-js');
 menuItems.forEach(item => {
     item.addEventListener('click', function (e) {
-        let link = e.target.dataset.link;
-        
-        
+        let link = e.target.dataset.link;        
         menuItems.forEach(element => element.classList.remove('active'));
         if (link == 'apply-header') {
             link = 'apply-now';
