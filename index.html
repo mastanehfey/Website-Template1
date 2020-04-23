@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <meta name="description" content="AXA Systems is a Web Design & Development Agency in Vancouver, Canada. We Specialize in Professional Responsive Website Design and Branding">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" href="CSS/style.css" data-cssvars="src">
     <link rel="shortcut icon" href="./static/Images/RBS-icon.png" type="image/x-icon">
     <script src="https://use.fontawesome.com/635021c34d.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <!-- to support older browsers -->
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="JS/polyfill.js"></script>
+
     <title>Royal Blue Solutions | Top rated mortgage lenders</title>
 </head>
 <body>
@@ -20,7 +28,7 @@
     </header>
     <div class="menu-section">
         <navbar class="navbar">
-            <img class="logo-navbar menu-item-js" src="/static/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" data-link="home">
+            <img class="logo-navbar menu-item-js" src="static/Images/rbslogo.png" alt="RoyalBlueSolutions Logo" data-link="home">
             <nav class="nav">
                 <ul class="menu-list">
                     <li class="menu-item menu-item-js" data-link="about">About</li>
@@ -203,9 +211,9 @@
                 </div>
             </div>
     </section>
-    <a href="#top" class="up-button"><i class="fa fa-chevron-up fa-3x"></i></a>
+    <a class="up-button"><i class="fa fa-chevron-up fa-3x"></i></a>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
 <script src="JS/script.js"></script>
 <script src="JS/validation.js"></script>
 </html>
