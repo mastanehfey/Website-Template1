@@ -58,7 +58,7 @@ function closeMobileMenu(){
 var menuItems = document.querySelectorAll('.menu-item-js');
 menuItems.forEach(item => {
     item.addEventListener('click', function (e) {
-        let link = e.target.dataset.link;        
+        let link = e.target.dataset.link;
         menuItems.forEach(element => element.classList.remove('active'));
         if (link == 'apply-header') {
             link = 'apply-now';
@@ -68,7 +68,8 @@ menuItems.forEach(item => {
         item.classList.add('active');
         }
         scrollToSection(link);
-
+        //change hash on window.location
+        window.location.replace(window.location.origin + window.location.pathname + '#'+ link);
         if (slideMenuOpen) {
             closeMobileMenu();
         }
